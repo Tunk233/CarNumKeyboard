@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/won_box_bg_gray" />
+
+    <size
+        android:width="25dp"
+        android:height="25dp" />
+
+    <corners android:radius="2dp" />
+
+    <stroke
+        android:width="2dp"
+        android:color="@color/won_light_blue" />
+</shape>

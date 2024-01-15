@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 底部弹出动画 -->
+    <style name="BottomPopupAnim" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/won_dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/won_dialog_bottom_out</item>
+    </style>
+</resources>

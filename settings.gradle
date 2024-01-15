@@ -1,0 +1,3 @@
+rootProject.name = "CarNumKeyboard"
+include ':app'
+include ':library-car-num'
