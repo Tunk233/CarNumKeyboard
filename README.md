@@ -13,7 +13,7 @@ Android输入车牌号的自定义键盘及输入方框。
 
 默认是非新能源的7位车牌、点击加号变成新能源8位车牌:
 
-<img src="./art/pic-2.png" width="67%" height="100%" alt="" align=left />  
+<img src="./art/pic-2.png" alt="" align=left />  
 
 
 
