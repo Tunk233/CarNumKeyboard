@@ -8,14 +8,15 @@ Android输入车牌号的自定义键盘及输入方框。
 
 未输入时展示省份键盘、输入第二位城市编码时禁用数字键盘、输完城市编码再启用数字键盘:
 
-<img src="./art/pic-1.png" width="100%" height="100%" alt="" align=left />  
+<img src="./art/pic-1.png" align=left />   
+---- 
 
 
 默认是非新能源的7位车牌、点击加号变成新能源8位车牌:
 
-![pic-2](./art/pic-2.png) 
-
-
+<img src="./art/pic-2.png" width="100%" height="100%" align=left />   
+----
+ 
 
 ## 使用方式
 
