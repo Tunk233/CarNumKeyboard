@@ -11,11 +11,9 @@ Android输入车牌号的自定义键盘及输入方框。
 <img src="./art/pic-1.png" width="100%" height="100%" alt="" align=left />
 
 
-
 默认是非新能源的7位车牌、点击加号变成新能源8位车牌:
 
 <img src="./art/pic-2.png" width="67%" height="100%" alt="" align=left />
-
 
 
 ## 使用方式
@@ -24,7 +22,6 @@ Android输入车牌号的自定义键盘及输入方框。
 ```groovy
 implementation project(path: ':library-car-num')
 ```
-
 
 
 参照demo中的使用方式：
@@ -54,7 +51,6 @@ CarNumHelper carNumHelper = new CarNumHelper(carNumView.getEditText(),
 //显示车牌键盘
 carNumHelper.showCustomKeyboard();
 ```
-
 
 
 偷了个懒:)，最后的Add按钮是按尾部对齐直接盖在输入框上的，正好挡住了第8位输入框：
@@ -91,12 +87,10 @@ carNumHelper.showCustomKeyboard();
 ```
 
 
-
 ## 注意事项
 
 仅供学习使用，不要用于商业场景。
 要求创建CarNumView所持有的Context是Activity, 否则无法正常弹出车牌号输入法，暂时未修复这个问题。
-
 
 
 ## 致谢
