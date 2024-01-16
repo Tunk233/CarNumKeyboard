@@ -1,33 +1,61 @@
-# CarNumKeyboard
+# CarNumKeyboard 车牌键盘
 
 Android输入车牌号的自定义键盘及输入方框。
 
+
+
 ## 效果展示
 
-![效果展示](./art/capture.mp4)
+未输入时展示省份键盘、输入第二位城市编码时禁用数字键盘、输完城市编码再启用数字键盘:
 
-未输入时的方框及键盘状态:
-![未输入时的方框及键盘状态](./art/pic-1.png)
+<img src="./art/pic-1.png" width="100%" height="100%" alt="" align=left />
 
-输入第二位城市编码时禁用数字键盘:
-![禁用数字键盘](./art/pic-2.png)
 
-输完城市编码再启用数字键盘:
-![启用数字键盘](./art/pic-3.png)
 
-默认是非新能源的7位车牌:
-![7位车牌](./art/pic-4.png)
+默认是非新能源的7位车牌、点击加号变成新能源8位车牌:
 
-点击加号变成新能源8位车牌:
-![新能源8位车牌](./art/pic-5.png)
+<img src="./art/pic-2.png" width="67%" height="100%" alt="" align=left />
+
 
 
 ## 使用方式
 
-参照demo中的使用方式，建议直接源码依赖，方便自己按需求修改:
+建议直接源码依赖，方便自己按需求修改:
 ```groovy
 implementation project(path: ':library-car-num')
 ```
+
+
+
+参照demo中的使用方式：
+
+```java
+Button btnSubmit = findViewById(R.id.btn_submit);
+CarNumView carNumView = findViewById(R.id.car_num_view);
+TextView tvBtnAdd = findViewById(R.id.tv_btn_add);
+
+tvBtnAdd.setOnClickListener(v -> {
+      tvBtnAdd.setVisibility(View.GONE);
+      //点击Add按钮后允许输入的最大字符长度变为8个
+      carNumView.getEditText().setMaxCnt(8);
+});
+
+btnSubmit.setEnabled(false);
+btnSubmit.setOnClickListener(v -> {
+    //获取当前输入内容
+    String carNumber = carNumView.getInputContent();
+    if(!carNumber.isEmpty()) {
+        Toast.makeText(this, carNumber, Toast.LENGTH_LONG).show();
+    }
+});
+
+CarNumHelper carNumHelper = new CarNumHelper(carNumView.getEditText(),
+    newInput -> btnSubmit.setEnabled(newInput.length() >= 7));
+//显示车牌键盘
+carNumHelper.showCustomKeyboard();
+```
+
+
 
 偷了个懒:)，最后的Add按钮是按尾部对齐直接盖在输入框上的，正好挡住了第8位输入框：
 
@@ -62,10 +90,16 @@ implementation project(path: ':library-car-num')
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
+
+
 ## 注意事项
 
-仅供学习使用，禁止用于商业场景。
+仅供学习使用，不要用于商业场景。
 要求创建CarNumView所持有的Context是Activity, 否则无法正常弹出车牌号输入法，暂时未修复这个问题。
 
+
+
 ## 致谢
+
 感谢[VehicleEditText](https://github.com/relish-wang/VehicleEditText) 及 [VerificationCodeView](https://github.com/JackTuoTuo/VerificationCodeView) ，在他们的基础上调整修改，整合出此版本的车牌输入框及键盘。
+
