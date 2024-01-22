@@ -162,6 +162,17 @@ public class CarNumView extends RelativeLayout {
         }
     }
 
+    /** 设置文本 */
+    public void setInputContent(String input) {
+        if(input == null) {
+            input = "";
+        } else if(input.length() > mBoxCnt) {
+            input = input.substring(0, mBoxCnt);
+        }
+        mEditText.setText(input);
+        mEditText.setSelection(input.length());
+    }
+
     /** 获取输入文本 */
     public String getInputContent() {
         StringBuilder sb = new StringBuilder();
