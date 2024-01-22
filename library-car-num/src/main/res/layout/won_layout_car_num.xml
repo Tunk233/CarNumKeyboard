@@ -11,12 +11,12 @@
         app:layout_constraintBottom_toBottomOf="@id/container_car_num"
         app:layout_constraintLeft_toLeftOf="@id/container_car_num"
         app:layout_constraintRight_toRightOf="@id/container_car_num"
+        android:textColor="@android:color/transparent"
         android:background="@android:color/transparent" />
     <LinearLayout
         android:id="@+id/container_car_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
