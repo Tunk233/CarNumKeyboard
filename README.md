@@ -20,11 +20,15 @@ Android输入车牌号的自定义键盘及输入方框。
 
 ## 使用方式
 
-建议直接源码依赖，方便自己按需求修改:
+AAR包依赖:
+```groovy
+implementation(name: 'CarNumKeyboard', ext: 'aar')
+```
+
+也可直接源码依赖，方便自己按需求修改:
 ```groovy
 implementation project(path: ':library-car-num')
 ```
-
 
 参照demo中的使用方式：
 
